@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card news</title>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+        }
+        .image-container {
+            position: relative;
+            width: 500px; /* 슬라이드 너비 */
+            height: 500px; /* 슬라이드 높이 */
+            overflow: hidden; /* 이미지를 슬라이드 밖으로 나가지 않게 설정 */
+            margin: 0 auto; /* 중앙 정렬 */
+        }
+
+        .image-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0; /* 처음에는 보이지 않음 */
+            transition: opacity 1s ease-in-out; /* 부드러운 전환 효과 */
+        }
+
+        .image-container img.active {
+            opacity: 1; /* 활성화된 이미지만 보이게 설정 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <img src="../img/pages/card/m1.png" alt="이미지 1" class="active">
+    <img src="../img/pages/card/m2.png" alt="이미지 2">
+    <img src="../img/pages/card/m3.png" alt="이미지 3">
+    <img src="../img/pages/card/m4.png" alt="이미지 4">
+    <img src="../img/pages/card/m5.png" alt="이미지 5">
+    <img src="../img/pages/card/m6.png" alt="이미지 6">
+
+</div>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.image-container img');
+    const totalImages = images.length;
+
+    // 자동 슬라이드를 위한 함수
+    function showNextImage() {
+        // 현재 이미지 숨기기
+        images[currentIndex].classList.remove('active');
+        
+        // 인덱스를 증가시키고 마지막 이미지일 경우 다시 첫 번째로 돌아감
+        currentIndex = (currentIndex + 1) % totalImages;
+        
+        // 다음 이미지 표시
+        images[currentIndex].classList.add('active');
+    }
+
+    // 2.5초마다 자동으로 슬라이드 전환
+    setInterval(showNextImage, 2500);
+</script>
+
+</body>
+</html>

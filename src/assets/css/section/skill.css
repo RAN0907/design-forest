@@ -1,0 +1,102 @@
+#skill {
+    width: 100%;
+    margin-top: 30vh;
+    overflow: hidden;
+}
+.skill__inner {
+    padding: 16px;
+}
+.skill__title {
+    width: 100%;
+    height: 5vw;
+    font-size: 4vw;
+    font-weight: 900;
+    line-height: 1.6;
+    font-family: var(--mainKor-font);
+    text-transform: uppercase;
+    color: var(--black100);
+    border-bottom: 0.4vw solid var(--black100);
+    margin-bottom: 16px;
+    text-indent: -0.26vw;
+}
+.skill__title em {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2;
+}
+.skill__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 3500px;
+}
+.skill__item {
+    width: 500px;
+    height: 70vh;
+    background-color: var(--subBg100);
+    padding: 2.5rem;
+    margin-right: 20px;
+}
+.skill__item.p1 {
+    background-color: var(--subBg100);
+}
+.skill__item.p2 {
+    background-color: var(--subBg200);
+}
+.skill__item.p3 {
+    background-color: var(--subBg300);
+}
+.skill__item.p4 {
+    background-color: var(--subBg400);
+}
+.skill__item.p5 {
+    background-color: var(--subBg500);
+}
+
+.skill__item .num {
+    font-size: 2rem;
+    font-family: var(--mainNum-font);
+}
+.skill__item:hover .img {
+    margin-top: 0;
+}
+.skill__item .title {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.8rem 0;
+    font-weight: 700;
+    color: var(--black100);
+    border-bottom: 2px solid var(--black100);
+    margin-bottom: 1rem;
+}
+.skill__item .desc {
+    font-size: 1rem;
+}
+.skill__item .site {
+    border: 1px solid var(--black100);
+    display: block;
+    text-align: center;
+    padding: 0.625rem 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 800px){
+    .skill__title {
+        width: 100%;
+        margin-bottom: 16px;
+        font-size: 30px;
+        height: auto;
+        top: 68px;
+        z-index: 1000;
+        background-color: var(--mainBg-color);
+
+    }
+    .skill__item {
+        width: 400px;
+        padding: 40px 30px;
+        height: auto;
+    }
+    .skill__item img {
+        width: 400px;
+        height: 300px;
+    }
+}
